@@ -1,0 +1,17 @@
+{
+    "name": "roma/skeleton-mvc",
+    "description": "This project is for general goals. Companies doing task for сcandidate made CRUD-project for limit time. This project is trying do MVC skeleton on base it may do other project",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Roma",
+            "email": "silvervaza@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
