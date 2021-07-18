@@ -1,5 +1,10 @@
 <?php
 require '../../vendor/autoload.php';
 use App\Core\Router;
-$route = new Router();
-$route->show();
+use App\Core\Application;
+$app = new Application();
+$app->router->get('/user', function(){
+    echo "method get from router";
+});
+$app->run();
+
