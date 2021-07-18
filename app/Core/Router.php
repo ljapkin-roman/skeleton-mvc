@@ -14,6 +14,10 @@ class Router
            $this->routes['get'][$path] = $callback;
     }
 
+    public function renderView($view) {
+        require_once __DIR__  . "/../Views/$view.php";
+    }
+
 
     public function resolve()
     {
@@ -22,7 +26,9 @@ class Router
         $callback = $this->routes[$method][$path] ?? false;
         if ($callback === false) {
             echo "Not found";
-            exit;
+        }
+        if (is_string($callback)) {
+            return $this->renderView($callback);
         }
         call_user_func($callback);
 
