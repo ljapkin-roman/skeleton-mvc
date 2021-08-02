@@ -26,11 +26,12 @@ class Request
 
     public function isGet() :?bool
     {
-        if ($this->getMethod() == 'get')
-        {
-            return true;
-        }
-        return false;
+        return $this->getMethod() === 'get';
+    }
+
+    public function isPost() :?bool
+    {
+        return $this->getMethod() ==='post';
     }
 
     public function getBody()

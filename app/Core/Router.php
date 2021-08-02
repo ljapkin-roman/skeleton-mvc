@@ -3,6 +3,7 @@ namespace App\Core;
 use App\Core\Request;
 use App\Core\Response;
 use App\Core\Application;
+use App\Controllers\AuthController;
 class Router
 {
     public Request $request;
@@ -35,9 +36,6 @@ class Router
     }
 
     protected function renderOnlyView($view, $params) {
-        echo '<pre>';
-        var_dump($params);
-        echo '</pre>';
         ob_start();
         include_once Application::$ROOT_DIR."/Views/$view.php";
         return ob_get_clean();

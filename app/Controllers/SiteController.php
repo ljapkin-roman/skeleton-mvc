@@ -22,13 +22,6 @@ class SiteController extends Controller
         return Application::$app->router->renderView('contact', $params);
     }
 
-    public function login()
-    {
-        echo "<pre>";
-        print_r(Application::$app->request->getBody());
-        echo "</pre>";
-        return $this->render('login');
-    }
 
     public function handlePost(Request $request)
     {
