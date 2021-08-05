@@ -9,6 +9,39 @@ class Application {
     public Request $request;
     public Response $response;
     public static Application $app;
+    public Controller $controller;
+
+    /**
+     * @return Controller
+     */
+    public function getController(): Controller
+    {
+        return $this->controller;
+    }
+
+    /**
+     * @param Controller $controller
+     */
+    public function setController(Controller $controller): void
+    {
+        $this->controller = $controller;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getROOTDIR(): string
+    {
+        return self::$ROOT_DIR;
+    }
+
+    /**
+     * @param string $ROOT_DIR
+     */
+    public static function setROOTDIR(string $ROOT_DIR): void
+    {
+        self::$ROOT_DIR = $ROOT_DIR;
+    }
     public function __construct($root_path)
     {
         self::$ROOT_DIR = $root_path;

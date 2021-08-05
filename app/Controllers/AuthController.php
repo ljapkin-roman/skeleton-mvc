@@ -8,11 +8,11 @@ class AuthController extends Controller
 {
      public function login(Request $request)
      {
-         if ($request->isGet())
+         if ($request->isPost())
          {
-             return 'handle submitted data';
+             print_r($_POST);
          }
-         $this->render('register');
+         return $this->render('login');
      }
 
      public function register(Request $request)
@@ -21,6 +21,6 @@ class AuthController extends Controller
          {
              return 'handle submitted data';
          }
-         $this->render('register');
+         return $this->render('register');
      }
 }
